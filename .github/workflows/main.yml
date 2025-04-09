@@ -1,0 +1,24 @@
+name: Java CI with Maven
+
+on: [push, pull_request] # Kích hoạt khi có push hoặc pull request
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest # Chạy trên máy ảo Ubuntu mới nhất
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3 # Action để lấy code từ repo
+
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v3
+      with:
+        java-version: '8' # Cài đặt Java phiên bản 8
+        distribution: 'temurin' # Sử dụng Temurin distribution
+        cache: 'maven' # Cache các thư viện Maven để tăng tốc
+
+    - name: Build and Test with Maven
+      # Chạy lệnh build và test của Maven
+      run: mvn -B package --file pom.xml test
+      # '-B' : batch mode
+      # 'package': build project (compile, test, package)
+      # 'test': chạy các unit test
