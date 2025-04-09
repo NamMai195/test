@@ -9,12 +9,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3 # Action để lấy code từ repo
 
-    - name: Set up JDK 1.8
+    - name: Set up JDK 23 # Đã đổi tên bước và phiên bản JDK
       uses: actions/setup-java@v3
       with:
-        java-version: '8' # Cài đặt Java phiên bản 8
-        distribution: 'temurin' # Sử dụng Temurin distribution
-        cache: 'maven' # Cache các thư viện Maven để tăng tốc
+        java-version: '23' # Thay đổi thành '23'
+        distribution: 'temurin' 
+        cache: 'maven'
 
     - name: Build and Test with Maven
       # Chạy lệnh build và test của Maven
