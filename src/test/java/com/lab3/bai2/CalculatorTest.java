@@ -12,13 +12,13 @@ public class CalculatorTest {
     @Test
     void testAdd() {
         int result = calculator.add(1, 1);
-        Assertions.assertEquals(3, result);
+        Assertions.assertEquals(2, result);
     }
 
     @Test
     void testSubtract() {
         int result = calculator.subtract(1, 1);
-        Assertions.assertEquals(10, result);
+        Assertions.assertEquals(0, result);
     }
 
     @Test
